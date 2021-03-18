@@ -4,6 +4,45 @@
     body{
       cursor: url("rick.PNG"), auto;
     }
+	body {font-family: Arial, Helvetica, sans-serif;}
+
+/* popup */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0); /* Black w/ opacity is rgba 0,0,0,0.4 */
+}
+
+/* content of popup */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
     </style>
   </head>
   <body>
@@ -14,9 +53,50 @@
   </div>
 </div>
   <img src="https://i.pinimg.com/736x/00/9a/33/009a3357d2ed9cf942a9c96ce5335893--viral-videos-link.jpg">
-  <img src="https://elfly.pythonanywhere.com/3.png">
   <img src="https://i.pinimg.com/736x/00/9a/33/009a3357d2ed9cf942a9c96ce5335893--viral-videos-link.jpg">
-</body></html>
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>YOU JUST GOT RICKROLLED</p>
+	<img src="https://i.pinimg.com/736x/00/9a/33/009a3357d2ed9cf942a9c96ce5335893--viral-videos-link.jpg">
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+var autopop = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+setTimeout('modal.style.display = "block"', 1000); 
+</script>
+
+
+
+</body>
+</html>
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript">
 setTimeout(myFunction, 500);    // function in offsite js file
