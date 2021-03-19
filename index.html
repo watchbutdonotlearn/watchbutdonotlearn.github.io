@@ -1,7 +1,7 @@
 <html>
   <head>
-	<title>YOU GOT RICKROLLED</title>
-	  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <title>YOU GOT RICKROLLED</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
@@ -54,7 +54,13 @@
     <p>Yo how do you like my epic website</p><p>LOL U GOT RICKROLLED</p>
 <div class="vembedr">
   <div>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/DLzxrzFCyOs?autoplay=1&enablejsapi=1" frameborder="0" allow="accelerometer"; autoplay; encrypted-media; gyroscope; picture-in-picture” allowfullscreen></iframe>
+   <!-- 
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/DLzxrzFCyOs?autoplay=1&enablejsapi=1" frameborder="0" allow="accelerometer"; autoplay; encrypted-media; gyroscope; picture-in-picture” allowfullscreen></iframe>
+   -->
+  <video width="720" height="405" autoplay id="videorickroll">
+  <source src="rickroll2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
   </div>
 </div>
   <img src="https://i.pinimg.com/736x/00/9a/33/009a3357d2ed9cf942a9c96ce5335893--viral-videos-link.jpg">
@@ -75,6 +81,12 @@
 // Get the modal
 var modal = document.getElementById("myModal");
 
+var vid = document.getElementById("videorickroll");
+
+function playVid() {
+    vid.play();
+}
+
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
@@ -86,19 +98,19 @@ var autopop = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+  playVid();
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+	playVid();
   }
 }
 
 setTimeout('modal.style.display = "block"', 1000); 
 </script>
-
-
 
 </body>
 </html>
