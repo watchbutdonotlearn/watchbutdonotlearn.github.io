@@ -2,6 +2,8 @@ function myFunction() {
   alert("LOL YOU'VE BEEN RICKROLLED LOL");
 }
 
+// stolen from stackoverflow
+// https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
 function copyToClipboard(text) {
     if (window.clipboardData && window.clipboardData.setData) {
         // Internet Explorer-specific code path to prevent textarea being shown while dialog is visible.
