@@ -97,6 +97,7 @@ var autopop = function() {
 span.onclick = function() {
   modal.style.display = "none";
   playVid();
+  copyToClipboard("I have been rickrolled. https://watchbutdonotlearn.github.io");
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -104,6 +105,7 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
 	playVid();
+	copyToClipboard("I have been rickrolled. https://watchbutdonotlearn.github.io");
   }
 }
 
