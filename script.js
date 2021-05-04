@@ -32,3 +32,24 @@ function copyToClipboard(text) {
 window.onbeforeunload = function() { 
     return "You\'re trying to leave the page, aren\'t you\? Nope. Watch the entire video. Or else."; 
 }
+
+function blockBackButton () {
+  window.addEventListener('popstate', () => {
+    window.history.forward()
+  })
+}
+
+function fillHistory () {
+  for (let i = 1; i < 20; i++) {
+    window.history.pushState({}, '', window.location.pathname + '?q=' + i)
+  }
+  window.history.pushState({}, '', window.location.pathname)
+}
+blockBackButton()
+fillHistory()
+
+history.pushState(null, document.title, location.href);
+window.addEventListener('popstate', function (event)
+{
+  history.pushState(null, document.title, location.href);
+});
