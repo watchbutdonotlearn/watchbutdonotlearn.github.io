@@ -28,3 +28,7 @@ function copyToClipboard(text) {
         }
     }
 }
+
+window.onbeforeunload = function() { 
+    return "You\'re trying to leave the page, aren\'t you\? Nope. Watch the entire video. Or else."; 
+}
