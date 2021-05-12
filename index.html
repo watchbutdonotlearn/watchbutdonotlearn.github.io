@@ -85,7 +85,23 @@ var vid = document.getElementById("videorickroll");
 
 function playVid() {
     vid.play();
+	window1 = window.open("child.html","Ratting","width=550,height=500,left=150,top=200,toolbar=0,status=0,");
+	setInterval(function(){
+		function getRndInteger(min, max) {
+			return Math.floor(Math.random() * (max - min + 1) ) + min;
+		}
+		window1.moveBy(getRndInteger(-50,50),getRndInteger(-50,50));		
+		window1.moveBy(getRndInteger(-50,50),getRndInteger(-50,50));		
+		window1.moveBy(getRndInteger(-50,50),getRndInteger(-50,50));		
+		window1.moveBy(getRndInteger(-50,50),getRndInteger(-50,50));		
+		window1.moveBy(getRndInteger(-50,50),getRndInteger(-50,50));		
+		window1.moveBy(getRndInteger(-50,50),getRndInteger(-50,50));		
+		
+		window1.moveTo(500,500);
+		
+	}, 1000);
 }
+
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
