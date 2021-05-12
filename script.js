@@ -29,9 +29,16 @@ function copyToClipboard(text) {
     }
 }
 
-window.onbeforeunload = function() { 
-    return "You\'re trying to leave the page, aren\'t you\? Nope. Watch the entire video. Or else."; 
+function confirmPageUnload () {
+  window.addEventListener('beforeunload', event => {
+    speak('Watch the entire video. Or else.')
+    event.returnValue = true
+  })
 }
+confirmPageUnload();
+
+
+
 
 function blockBackButton () {
   window.addEventListener('popstate', () => {
@@ -47,6 +54,10 @@ function fillHistory () {
 }
 blockBackButton()
 fillHistory()
+
+function speak (phrase) {
+  window.speechSynthesis.speak(new window.SpeechSynthesisUtterance(phrase))
+}
 
 history.pushState(null, document.title, location.href);
 window.addEventListener('popstate', function (event)
