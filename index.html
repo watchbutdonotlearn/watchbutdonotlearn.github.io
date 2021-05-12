@@ -83,6 +83,36 @@ var modal = document.getElementById("myModal");
 
 var vid = document.getElementById("videorickroll");
 
+const SCREEN_WIDTH = window.screen.availWidth
+const SCREEN_HEIGHT = window.screen.availHeight
+const WIN_WIDTH = 480
+const WIN_HEIGHT = 260
+const VELOCITY = 15
+const MARGIN = 10
+const TICK_LENGTH = 50
+
+
+
+function moveWindowBounce () {
+  let vx = VELOCITY * (Math.random() > 0.5 ? 1 : -1)
+  let vy = VELOCITY * (Math.random() > 0.5 ? 1 : -1)
+
+  window.setInterval(() => {
+    const x = window.screenX
+    const y = window.screenY
+    const width = window.outerWidth
+    const height = window.outerHeight
+
+    if (x < MARGIN) vx = Math.abs(vx)
+    if (x + width > SCREEN_WIDTH - MARGIN) vx = -1 * Math.abs(vx)
+    if (y < MARGIN + 20) vy = Math.abs(vy)
+    if (y + height > SCREEN_HEIGHT - MARGIN) vy = -1 * Math.abs(vy)
+
+    window.moveBy(vx, vy)
+  }, TICK_LENGTH)
+}
+
+
 function playVid() {
     vid.play();
 	window1 = window.open("child.html","Ratting","width=440,height=518,left=689,top=439,toolbar=0,status=0,");
@@ -92,22 +122,8 @@ function playVid() {
 	function sleep(ms) {
 		return new Promise(resolve => setTimeout(resolve, ms));
 	}
-	async function movewindow(){
-		window1.moveBy(getRndInteger(-160,160),getRndInteger(-160,130));
-		await sleep(253);
-		window1.moveBy(getRndInteger(-90,160),getRndInteger(-230,140));
-		await sleep(253);
-		window1.moveBy(getRndInteger(-130,250),getRndInteger(-230,40));
-		await sleep(253);
-		window1.moveBy(getRndInteger(-160,230),getRndInteger(-50,240));
-		await sleep(253);
-		window1.moveBy(getRndInteger(-253,60),getRndInteger(-50,260));
-		await sleep(253);
-		window1.moveBy(getRndInteger(-260,73),getRndInteger(-260,130));
-		await sleep(253);
-		window1.moveTo(689,439);
-	}
-	setInterval(movewindow, 253);
+	
+	setInterval(moveWindowBounce, 253);
 }
 
 
