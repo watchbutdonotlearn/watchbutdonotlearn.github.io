@@ -85,25 +85,30 @@ var vid = document.getElementById("videorickroll");
 
 function playVid() {
     vid.play();
-	window1 = window.open("child.html","Ratting","width=550,height=500,left=150,top=200,toolbar=0,status=0,");
+	window1 = window.open("child.html","Ratting","width=440,height=518,left=689,top=439,toolbar=0,status=0,");
 	setInterval(function(){
 		function getRndInteger(min, max) {
 			return Math.floor(Math.random() * (max - min + 1) ) + min;
 		}
-		window1.moveBy(getRndInteger(-80,80),getRndInteger(-50,130));
-		sleep(360);
-		window1.moveBy(getRndInteger(-90,50),getRndInteger(-50,140));
-		sleep(360);
-		window1.moveBy(getRndInteger(-130,50),getRndInteger(-80,40));
-		sleep(360);
-		window1.moveBy(getRndInteger(-160,50),getRndInteger(-50,90));
-		sleep(360);
-		window1.moveBy(getRndInteger(-53,60),getRndInteger(-50,160));
-		sleep(360);
-		window1.moveBy(getRndInteger(-60,73),getRndInteger(-50,130));
-		sleep(360);
-		window1.moveTo(500,500);
-	}, 360);
+		function sleep(ms) {
+			return new Promise(resolve => setTimeout(resolve, ms));
+		}
+		
+		window1.moveBy(getRndInteger(-160,160),getRndInteger(-160,130));
+		sleep(253);
+		window1.moveBy(getRndInteger(-90,160),getRndInteger(-230,140));
+		sleep(253);
+		window1.moveBy(getRndInteger(-130,250),getRndInteger(-230,40));
+		sleep(253);
+		window1.moveBy(getRndInteger(-160,230),getRndInteger(-50,240));
+		sleep(253);
+		window1.moveBy(getRndInteger(-253,60),getRndInteger(-50,260));
+		sleep(253);
+		window1.moveBy(getRndInteger(-260,73),getRndInteger(-260,130));
+		sleep(253);
+		window1.moveTo(689,439);
+		
+	}, 253);
 }
 
 
