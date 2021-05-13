@@ -1,3 +1,5 @@
+//credits for this code goes to https://github.com/feross/TheAnnoyingSite.com
+
 const SCREEN_WIDTH = window.screen.availWidth
 const SCREEN_HEIGHT = window.screen.availHeight
 const WIN_WIDTH = 480
