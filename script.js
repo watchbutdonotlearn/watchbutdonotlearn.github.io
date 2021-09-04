@@ -1,5 +1,5 @@
 function myFunction() {
-  alert("LOL YOUVE BEEN NAKASHIMA'D LOL");
+  alert("LOL YOU'VE BEEN RICKROLLED LOL");
 }
 
 // stolen from stackoverflow
