@@ -24,6 +24,24 @@ if (document.addEventListener) {
   });
 }
 
+window.onkeydown = function () { 
+  var keyCode = event.keyCode;
+  if (keyCode == 18 || keyCode == 27 || keyCode == 115){
+    console.log('bruhmoment lol');
+    alert('Trying to press the control or alt+f4 keys, eh? Are you trying to inspect the page? Or leave it? Nice try kiddo.')
+  }
+  console.log('yet another bruhmoment')
+}
+
+window.onkeydown = function(e){
+  if(e.ctrlKey){ // && e.keyCode == 'w'.charCodeAt(0)
+    //e.preventDefault();
+    console.log('hahahhahahahahahha laugh at this stupid user')
+    alert('What are you trying to do with the ctrl key, eh? Inspect element? Leave through ctrl w? nice try.')
+  }
+}
+
+
 // stolen from stackoverflow
 // https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
 function copyToClipboard(text) {
