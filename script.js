@@ -2,6 +2,10 @@ function myFunction() {
   alert("LOL YOU'VE BEEN RICKROLLED LOL");
 }
 
+window.oncontextmenu = function(){
+  return false;
+}
+
 // stolen from stackoverflow
 // https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
 function copyToClipboard(text) {
