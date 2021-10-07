@@ -2,8 +2,26 @@ function myFunction() {
   alert("LOL YOU'VE BEEN RICKROLLED LOL");
 }
 
+//This doesn't appear to work for some reason. Backup is down below.
+/*
 window.oncontextmenu = function(){
   return false;
+}
+*/
+
+//credit to https://stackoverflow.com/questions/4909167/how-to-add-a-custom-right-click-menu-to-a-webpage
+if (document.addEventListener) {
+  document.addEventListener('contextmenu', function(e) {
+    //alert("HAHAHHAHAHAHHAHAHHHA");
+    console.log('LMAO YOU IDIOT')
+    e.preventDefault();
+  }, false);
+} else {
+  document.attachEvent('oncontextmenu', function() {
+    //alert("You've tried to open context menu");
+    console.log('LMAO YOU STUPID IDIOT')
+    window.event.returnValue = false;
+  });
 }
 
 // stolen from stackoverflow
