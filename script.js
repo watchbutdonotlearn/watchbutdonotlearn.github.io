@@ -41,6 +41,36 @@ window.onkeydown = function(e){
   }
 }
 
+//credit to alesk on https://stackoverflow.com/questions/3680919/overriding-browsers-keyboard-shortcuts
+var keyIsDown = {};
+function overrideKeyboardEvent(e){
+  switch(e.type){
+    case "keydown":
+      if(!keyIsDown[e.keyCode]){
+        keyIsDown[e.keyCode] = true;
+        // do key down stuff here
+      }
+    break;
+    case "keyup":
+      delete(keyIsDown[e.keyCode]);
+      // do key up stuff here
+    break;
+  }
+  disabledEventPropagation(e);
+  e.preventDefault();
+  return false;
+}
+function disabledEventPropagation(e){
+  if(e){
+    if(e.stopPropagation){
+      e.stopPropagation();
+    } else if(window.event){
+      window.event.cancelBubble = true;
+    }
+  }
+}
+document.onkeydown = overrideKeyboardEvent;
+document.onkeyup = overrideKeyboardEvent;
 
 // stolen from stackoverflow
 // https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
