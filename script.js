@@ -160,5 +160,10 @@ var isPlaying = {
 */
 
 setInterval(function(){
-  vid1.play()
-}, 500);
+  try{
+    vid1.play()
+  }
+  catch{
+    console.log('please click somewhere pleaaaasseeee')
+  }
+}, 300);
