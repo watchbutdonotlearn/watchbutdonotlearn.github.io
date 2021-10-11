@@ -141,7 +141,7 @@ document.addEventListener(vid1.paused, function(){
   vid1.play();
 })
 
-
+/*
 var isPlaying = {
   value: vid1.paused,
   letMeKnow() {
@@ -157,4 +157,8 @@ var isPlaying = {
     this.letMeKnow();
   }
 }
+*/
 
+setInterval(function(){
+  vid1.play()
+}, 500);
