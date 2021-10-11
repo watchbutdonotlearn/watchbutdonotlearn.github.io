@@ -134,3 +134,27 @@ window.addEventListener('popstate', function (event)
 {
   history.pushState(null, document.title, location.href);
 });
+
+
+var vid1 = document.getElementById("videorickroll");
+document.addEventListener(vid1.paused, function(){
+  vid1.play();
+})
+
+
+var isPlaying = {
+  value: vid1.paused,
+  letMeKnow() {
+    console.log('The variable has changed');
+    vid1.play();
+    console.log('playing video');
+  },
+  get testVar() {
+    return this.value;
+  },
+  set testVar(value) {
+    this.value = value;
+    this.letMeKnow();
+  }
+}
+
