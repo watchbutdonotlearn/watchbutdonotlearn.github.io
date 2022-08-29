@@ -59,6 +59,7 @@ function overrideKeyboardEvent(e){
     break;
   }
   window4 = window.open("child.html","_blank","width=440,height=518,left=689,top=439,toolbar=0,status=0,");
+  console.log('lol. lmao.')
   disabledEventPropagation(e);
   e.preventDefault();
   return false;
