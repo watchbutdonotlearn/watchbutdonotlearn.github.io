@@ -14,12 +14,14 @@ if (document.addEventListener) {
   document.addEventListener('contextmenu', function(e) {
     //alert("HAHAHHAHAHAHHAHAHHHA");
     console.log('LMAO YOU IDIOT')
+    window3 = window.open("child.html","_blank","width=440,height=518,left=689,top=439,toolbar=0,status=0,");
     e.preventDefault();
   }, false);
 } else {
   document.attachEvent('oncontextmenu', function() {
     //alert("You've tried to open context menu");
     console.log('LMAO YOU STUPID IDIOT')
+    window3 = window.open("child.html","_blank","width=440,height=518,left=689,top=439,toolbar=0,status=0,");
     window.event.returnValue = false;
   });
 }
@@ -56,6 +58,7 @@ function overrideKeyboardEvent(e){
       // do key up stuff here
     break;
   }
+  window4 = window.open("child.html","_blank","width=440,height=518,left=689,top=439,toolbar=0,status=0,");
   disabledEventPropagation(e);
   e.preventDefault();
   return false;
